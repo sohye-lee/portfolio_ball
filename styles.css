@@ -1,0 +1,299 @@
+/* ============= GLOBAL SETTING ============= */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto+Mono:wght@100;200;400&display=swap');
+
+:root {
+    --White : #fff;
+    --Gray : rgb(140, 142, 143);
+    --Smoke : rgb(245, 245, 245);
+    --Black : rgb(24, 24, 24);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--Smoke);
+    font-family: 'Inconsolata', monospace;
+    display: flex;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.canvas {
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 100;
+}
+
+
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* ============= NAVBARS SETTING ============= */
+
+/* navbar bottom  */
+.navbars {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 111;
+    /* background-color: yellow; */
+}
+
+.nav__bottom {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    z-index: 109;
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+.bottom__item {
+    margin-right: 20px;
+    text-shadow: 1px 1px 1px  var(--Smoke), -1px -1px 1px  var(--Smoke);
+    font-weight: 100;
+    z-index: 109;
+    cursor: pointer;
+ 
+}
+
+.bottom__item > a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* navbar top */
+.nav__top {
+    position: fixed;
+    top: 40px;
+    right: 0px;
+    width: 100vw;
+    padding-right:40px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav__toggler {
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav__toggler__inner {
+    height: 3px;  
+    width: 40px;
+    margin-bottom: 5px;
+    box-shadow: 0 3px var(--Smoke);
+    transition: all 350ms ease-in;
+}
+
+.nav__list {
+    margin: 0 30px;
+    display: none;
+    transition: all 350ms ease-in;
+}
+
+.top__item {
+    margin: 0 5px;
+}
+
+.top__item a {
+    background-color: var(--Smoke);
+    padding: 2px 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.nav__toggler__clicked {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all 350ms ease-in;
+}
+
+.nav__list__clicked {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    transition: all 350ms ease-in;
+}
+
+
+.toggler__x {
+    transform: rotate(-45deg);
+}
+
+
+
+
+/* ============= HOME SETTING ============= */
+
+.home { 
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 110;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: pink; */
+}
+
+.home__background {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    /* background: yellow; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgcolorChange {
+    background-color: transparent;
+    animation: colorChange 500ms ease-in-out;
+}
+@keyframes colorChange {
+    0% {
+        background-color: transparent;
+    }
+    20% {
+        background-color: rgba(0,0,0,.7);
+    }
+    100% {
+        background-color: transparent;
+    }
+
+}
+
+.home h1 {
+    position: relative;
+    z-index: 110;
+    font-size: 2rem;
+    color: var(--Smoke);
+    letter-spacing: 2px;
+}
+
+/* ============= PROJECT1 SETTING ============= */
+
+.about {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+.about__content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__placard {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    z-index: 120;
+    height: 100vh;
+}
+
+.placard__line {
+    position: absolute;
+    top: -80vh;
+    left: 50%;
+    width: 1px;
+    height: 80vh;
+    background-color: var(--Black);
+}
+
+.placard__sign {
+    position: absolute;
+    top: 30%;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 400px;
+    background-color: var(--White);
+    border: 1px solid var(--Black); 
+    color: var(--Black);
+    z-index: 111;
+}
+
+.swing {
+    transform-origin: center top;
+    animation: swing 2s ease;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(2.5deg);
+    }
+    10% {
+        transform: rotate(-2.5deg);
+    }
+    20% {
+        transform: rotate(1.8deg);
+    }
+    30% {
+        transform: rotate(-1.8deg);
+    }
+    40% {
+        transform: rotate(1.2deg);
+    }
+    50% {
+        transform: rotate(-1.2deg);
+    }
+    60% {
+        transform: rotate(.7deg);
+    }
+    70% {
+        transform: rotate(-.7deg);
+    }
+    80% {
+        transform: rotate(.3deg);
+    }
+    90% {
+        transform: rotate(-.3deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.placard__text {
+
+}
