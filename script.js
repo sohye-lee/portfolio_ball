@@ -12,23 +12,26 @@ var mouse = {
     y: innerHeight / 2
 };
 
-var background = document.querySelector('.home__background');
+var background = document.querySelector('body');
+var logo = document.querySelector('.logo');
+
 var placards = document.getElementsByClassName('about__placard')
 var placardSigns = document.getElementsByClassName('placard__sign');
 var placardRods = document.getElementsByClassName('placard__line')
 
+var navBottom = document.querySelector('.nav__bottom');
 
 var color = colorGenerator()
 var gravity = 1;
-var friction = 0.99;
+var friction = 0.97;
 
 //Event Listeners
-addEventListener("mousemove", function(e) {
+document.addEventListener("mousemove", function(e) {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 });
 
-addEventListener("resize", function() {
+document.addEventListener("resize", function() {
     canvas.width = innerWidth;
     canvas.height = innerHeight;
 
@@ -41,24 +44,48 @@ function colorChange() {
 function colorBack() {
     background.classList.remove('bgcolorChange')
 }
-addEventListener('click', function() {
+document.addEventListener('click', function() {
     init();
     colorChange();
-    setInterval(colorBack, 500);
+    setTimeout(colorBack, 500);
 })
 
-addEventListener('scroll', function() {
+const playSwing = (placard, className) => {
+    placard.classList.add(className);
+}
+var swings = ['swing1', 'swing2','swing3', 'swing4'];
+
+document.addEventListener('scroll', function(event) {
     canvas.width = innerWidth*2;
     for (var i = 0; i < placards.length; i++) {
-        placards[i].classList.add('swing');
+        playSwing(placards[i],swings[i]); 
     }
-    setInterval(function() {
-        for (var i = 0; i < placards.length; i++) {
-            placards[i].classList.remove('swing');
-        }
-    }, 2000);
-    console.log(placards.classList);
+
+    if (window.scrollX <= 200) {
+        if (logo.classList.contains('logo__right')) {
+            logo.classList.remove('logo__right');
+        } 
+        if (logo.classList.contains('logo__left')) {
+            logo.classList.remove('logo__left');
+        } 
+    } else if (window.scrollX > 200 && window.scrollX <= (innerWidth*0.8)) {
+        logo.classList.add('logo__right');
+    } else if (window.scrollX > (innerWidth*0.8)) {
+        logo.classList.add('logo__left');
+        // logo.classList.remove('logo__right');
+
+    }
+
+    if (window.scrollX > (innerWidth*2-100)) {
+        navBottom.classList.add('bottom__vertical');
+    } else {
+        navBottom.classList.remove('bottom__vertical')
+    }
+
 })
+
+
+
 
 //Utility Functions
 function randomIntFromRange(min, max) {
@@ -69,7 +96,6 @@ function colorGenerator() {
     var red = String(Math.floor(Math.random() * 180)+50);
     var yellow = String(Math.floor(Math.random() * 180)+50);
     var blue = String(Math.floor(Math.random() * 180)+50);
-    console.log(red)
     return 'rgb('+red+','+yellow+','+blue+')';
 }
 
@@ -124,6 +150,10 @@ function animate() {
   
     ctx.clearRect(0,0, canvas.width, canvas.height);
     ball.update();
+
+    // setTimeout(function() {
+    //     logo.classList.add('logo__right');
+    // }, 1500)
 }
 
 init();
@@ -134,7 +164,7 @@ animate();
 var colorObjects = document.querySelectorAll('.color__change');
 var bgcolorObjects = document.querySelectorAll('.bgcolor__change');
 
-function randomColor() {
+function changeObjectsColor() {
     for (var i=0;i<colorObjects.length;i++) {
         colorObjects[i].style.color = color;
     }
@@ -143,7 +173,7 @@ function randomColor() {
     }
 }
 
-randomColor();
+changeObjectsColor();
 
 
 
@@ -164,5 +194,7 @@ toggler.addEventListener('click', function() {
         togglerInners[1].classList.add('toggler__x');
     }
 })
+
+
 
 

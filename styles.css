@@ -8,6 +8,9 @@
     --Gray : rgb(140, 142, 143);
     --Smoke : rgb(245, 245, 245);
     --Black : rgb(24, 24, 24);
+    --PalePink : #f58585;
+    --Pink : #fd5151;
+    --Lime : rgb(158, 255, 113);
 }
 
 body {
@@ -51,13 +54,16 @@ section {
     /* background-color: yellow; */
 }
 
+
+
 .nav__bottom {
     position: fixed;
     bottom: 40px;
     left: 40px;
-    z-index: 109;
+    z-index: 111;
     display: flex;
     align-items: center;
+    transition: all 350ms ease;
 }
 
 ul {
@@ -66,10 +72,15 @@ ul {
 }
 
 .bottom__item {
-    margin-right: 20px;
-    text-shadow: 1px 1px 1px  var(--Smoke), -1px -1px 1px  var(--Smoke);
+    margin-right: 22px;
+    height: 22px;
+    width: 20px;
+    text-align: center;
+    line-height: 22px;
+    background-color: var(--Smoke);
+    border-radius: 50%;
     font-weight: 100;
-    z-index: 109;
+    z-index: 111;
     cursor: pointer;
  
 }
@@ -79,6 +90,10 @@ ul {
     cursor: pointer;
 }
 
+.bottom__vertical {
+    transform: rotate(-90deg);
+    transform-origin: left;
+}
 
 /* navbar top */
 .nav__top {
@@ -86,11 +101,85 @@ ul {
     top: 40px;
     right: 0px;
     width: 100vw;
-    padding-right:40px;
+    padding: 0 40px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.logo {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    height: 50px;
+    width: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 2ms ease-in 300ms forwards;
+    z-index: 111;
+}
+
+.logo a {
+    height: 70%;
+    cursor: pointer;
+}
+
+.logo a img {
+    height: 100%;
+}
+
+.logo__right {
+    /* transform: rotate(90deg) */
+    animation: turnRight 1s ease-in 100ms forwards;
+}
+
+.logo__left {
+    animation: turnLeft 2s ease-in 100ms forwards;
+}
+
+@keyframes turnRight {
+    0% {
+        transform: rotate(0);
+    }
+    80% {
+        transform: rotate(95deg);
+    }
+    85% {
+        transform: rotate(85deg);
+    }
+    90% {
+        transform: rotate(92deg);
+    }
+    95% {
+        transform: rotate(88deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes turnLeft {
+    0% {
+        transform: rotate(90deg);
+    }
+    80% {
+        transform: rotate(-95deg);
+    }
+    85% {
+        transform: rotate(-85deg);
+    }
+    90% {
+        transform: rotate(-92deg);
+    }
+    95% {
+        transform: rotate(-88deg);
+    }
+    100% {
+        transform: rotate(-90deg);
+    }
 }
 
 .nav__toggler {
@@ -117,11 +206,19 @@ ul {
 .nav__list {
     margin: 0 30px;
     display: none;
+    /* transform: scale(0); */
     transition: all 350ms ease-in;
+    /* display: flex;
+    margin: 0 30px;    
+    align-items: flex-end;
+    justify-content: center;
+    transform-origin: right;
+    transform: scale(0); */
 }
 
 .top__item {
     margin: 0 5px;
+
 }
 
 .top__item a {
@@ -143,9 +240,26 @@ ul {
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
-    transition: all 350ms ease-in;
+    transition: all 350ms ease-in; 
+    animation: navlistDeply 1s ease-in;
 }
 
+/* .nav__list__clicked .top__item {
+    display: block
+} */
+/* 
+.nav__list__clicked .top__item {
+    display: block;
+} */
+
+@keyframes navlistDeploy {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
 
 .toggler__x {
     transform: rotate(-45deg);
@@ -163,14 +277,9 @@ ul {
     z-index: 110;
     width: 100vw;
     height: 100vh;
-    /* background-color: pink; */
 }
 
 .home__background {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
-    /* background: yellow; */
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -203,7 +312,7 @@ ul {
     letter-spacing: 2px;
 }
 
-/* ============= PROJECT1 SETTING ============= */
+/* ============= ABOUT SETTING ============= */
 
 .about {
     position: absolute;
@@ -214,6 +323,9 @@ ul {
 }
 
 .about__content {
+    position: absolute;
+    top:0;
+    left: 0;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -224,9 +336,59 @@ ul {
 .about__placard {
     position: absolute;
     top: 0;
-    left: 40%;
-    z-index: 120;
     height: 100vh;
+}
+
+.placard1 {
+    position: absolute;
+    top: 0;
+    left: 8vw !important;
+    height: 100vh;
+}
+
+.placard1 .placard__sign {
+    top: 40%;
+}
+
+.placard2 {
+    position: absolute;
+    top: 0;
+    left: 28vw !important;
+    height: 100vh;
+    z-index: 110;
+}
+
+.placard2 .placard__sign {
+    top: 10%;
+}
+
+.placard3 {
+    position: absolute;
+    top: 0;
+    left: 50vw !important;
+    height: 100vh;
+}
+
+.placard3 .placard__sign {
+    top: 30%;
+}
+
+.placard4 {
+    position: absolute;
+    top: 0;
+    left: 69vw !important;
+    height: 100vh;
+    z-index: 110;
+}
+
+.placard4 .placard__sign {
+    top: 70%;
+    background-color: var(--PalePink);
+    transition: all 320ms ease-in;
+}
+
+.placard4 .placard__sign:hover {
+    background-color: var(--Pink);
 }
 
 .placard__line {
@@ -240,8 +402,7 @@ ul {
 
 .placard__sign {
     position: absolute;
-    top: 30%;
-    padding: 20px 50px;
+    padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -250,38 +411,48 @@ ul {
     background-color: var(--White);
     border: 1px solid var(--Black); 
     color: var(--Black);
-    z-index: 111;
 }
 
-.swing {
+.swing1 {
     transform-origin: center top;
-    animation: swing 2s ease;
+    animation: swing 4s linear infinite;
+}
+.swing2 {
+    animation: swing 5.1s linear 300ms infinite;
+}
+
+.swing3 {
+    animation: swing 4.8s linear 400ms infinite; 
+}
+
+.swing4 {
+    animation: swing 3s linear 200ms infinite; 
 }
 
 @keyframes swing {
     0% {
-        transform: rotate(2.5deg);
+        transform: rotate(.2deg);
     }
     10% {
-        transform: rotate(-2.5deg);
+        transform: rotate(-.2deg);
     }
     20% {
-        transform: rotate(1.8deg);
+        transform: rotate(.4deg);
     }
     30% {
-        transform: rotate(-1.8deg);
+        transform: rotate(-.4deg);
     }
     40% {
-        transform: rotate(1.2deg);
+        transform: rotate(.5deg);
     }
     50% {
-        transform: rotate(-1.2deg);
+        transform: rotate(-.6deg);
     }
     60% {
-        transform: rotate(.7deg);
+        transform: rotate(.64deg);
     }
     70% {
-        transform: rotate(-.7deg);
+        transform: rotate(-.5deg);
     }
     80% {
         transform: rotate(.3deg);
@@ -295,5 +466,130 @@ ul {
 }
 
 .placard__text {
+    line-height: 1.5rem;
+}
 
+.placard__text h2 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.placard4 .placard__text a {
+    text-decoration: none;
+    color: var(--White);
+}
+
+.placard4 .placard__text a h2 {
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.placard__text h3 {
+    margin: 10px auto;
+    font-weight: 100;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.05rem;
+
+}
+
+.triangler__reverse {
+    height: 0;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 13px solid var(--Gray);
+    margin: 3px auto;
+}
+
+.country {
+    color: var(--Pink);
+    margin-left: 12px;
+    font-size: .9rem;
+}
+
+
+.skill__frontend {
+    font-size: 1.3rem !important;
+    /* background-color: pink; */
+    font-weight: 600;
+}
+
+.skill {
+    padding: 3px 6px;
+    background-color: var(--Black);
+    color: var(--White);
+    line-height: 2rem;
+    transition: all 300ms ease;
+}
+
+.skill:hover {
+    font-size: 1.2rem;
+    background-color: var(--Lime);
+    color: var(--Black);
+    font-weight: 700;
+}
+
+.moocs {
+    font-size: .9rem;
+    margin: 0;
+    line-height: 1rem;
+    margin: 7px;
+    text-align: left;
+}
+
+/* ============= PROJECTS SETTING ============= */
+/* BASIC SETTING */
+.project {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Smoke);
+    overflow: auto;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.project1 {
+    left: 200vw;
+}
+
+.project2 {
+    left: 300vw;
+    background-color: var(--Black);
+}
+
+.project3 {
+    left: 400vw;
+}
+
+.project__title {
+    position: absolute;
+    top: 55vh;
+    left: 20px;
+    text-orientation: mixed;
+    writing-mode: sideways-lr;
+    transform-origin: left;
+    transform: rotate(-90deg);
+
+}
+
+.color__smoke {
+    color: var(--Smoke);
+}
+
+.project__title h3 {
+    text-orientation: vertical;
+    writing-mode: sideways-lr;
+}
+
+
+.project__content {
+    
 }

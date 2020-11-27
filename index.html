@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://use.fontawesome.com/32f8a9b942.js"></script>
+    <!-- <script src="https://use.fontawesome.com/32f8a9b942.js"></script> -->
 
     <title>P4</title>
 </head>
@@ -14,34 +14,45 @@
 
     <!----------- NAVBARS -------------->
     <section class="navbars">
-        <div class="nav__bottom">
-            <ul>
-                <li class="bottom__item color__change">PJ</a></li>
-                <li class="bottom__item"><a href="#" class="color__change">01</a></li>
-                <li class="bottom__item"><a href="#" class="color__change">02</a></li>
-                <li class="bottom__item"><a href="#" class="color__change">03</a></li>
-                <li class="bottom__item"><a href="#" class="color__change">04</a></li>
-                <li class="bottom__item"><a href="#" class="color__change">05</a></li>
-                <li class="bottom__item"><a href="#" class="color__change">06</a></li>
-            </ul>
+        
+        <!-- LOGO -->
+        <div class="logo" href="#home">
+            <a href="/"><img src="images/logo.png"></img></a>
         </div>
+
+        <!-- NAVBAR - TOP -->
         <div class="nav__top">
             <div class="nav__toggler">
                 <div class="nav__toggler__inner bgcolor__change"></div>
                 <ul class="nav__list">
-                    <li class="top__item"><a href="" class="color__change">me</a></li>
-                    <li class="top__item"><a href="" class="color__change">focus</a></li>
-                    <li class="top__item"><a href="" class="color__change">projects</a></li>
-                    <li class="top__item"><a href="" class="color__change">linkedin</a></li>
-                    <li class="top__item"><a href="" class="color__change">git</a></li>
+                    <li class="top__item"><a href="#me" class="color__change">me</a></li>
+                    <li class="top__item"><a href="#project1" class="color__change">projects</a></li>
+                    <li class="top__item"><a href="#contact" class="color__change">contact</a></li>
+                    <li class="top__item"><a href="images/resume.pdf" download class="color__change">resume</a></li>
+                    <li class="top__item"><a href="https://linkedin.com/in/sohyelee" target="blank" class="color__change">linkedIn</a></li>
+                    <li class="top__item"><a href="https://github.com/sohye-lee" target="blank" class="color__change">git</a></li>
                 </ul>
                 <div class="nav__toggler__inner bgcolor__change"></div>
             </div>
         </div>
+
+        <!-- NAVBAR - BOTTOM -->
+        <div class="nav__bottom">
+            <ul>
+                <li class="bottom__item color__change">PJ</a></li>
+                <li class="bottom__item"><a href="#project1" class="color__change">01</a></li>
+                <li class="bottom__item"><a href="#project2" class="color__change">02</a></li>
+                <li class="bottom__item"><a href="#project3" class="color__change">03</a></li>
+                <li class="bottom__item"><a href="#" class="color__change">04</a></li>
+                <li class="bottom__item"><a href="#" class="color__change">05</a></li>
+                <!-- <li class="bottom__item"><a href="#" class="color__change">06</a></li> -->
+            </ul>
+        </div>
+
     </section>
 
     <!----------- HOME PAGE -------------->
-    <section class="home">
+    <section class="home" id="home">
         <div class="home__background">
             <h1> Hi,<br>
             it's Sohye.</h1>
@@ -50,31 +61,147 @@
 
 
     <!----------- ABOUT PAGE -------------->
-    <section class="about">
+    <section class="about" id="about">
+
+        <!-- PLACARD 1 -->
         <div class="about__content">
-            <div class="about__placard">
-                <!-- <div class="placard__line"></div> -->
+            <div class="about__placard placard1">
                 <div class="placard__sign">
                     <div class="placard__line"></div>
-                    <h3 class="placard__text ">0 fear for challenges<br>
-                                               <br>
-                                               Arts <br>
-                                               |<br>
-                                               V<br>
-                                               Museum Studies & Art History<br>
-                                               |<br>
-                                               V<br>
-                                               Collections & Database Management<br>
-                                               |<br>
-                                               V<br>
-
-
-                    </h3>
+                    <div class="placard__text ">
+                        <h2> My Journey of Challenges</h2>
+                        <hr>
+                        <h3>Fine Arts<span class="country">-- S.Korea</span></h3>
+                        <div class="triangler__reverse"></div>
+                        <h3>Museum Studies & Art History<span class="country">-- France</span></h3>
+                        <div class="triangler__reverse"></div> 
+                        <h3> Art Collections <br>& Database Management<span class="country">-- S.Korea & France</span></h3>
+                        <div class="triangler__reverse"></div>
+                        <h3>Programming<span class="country">-- USA</span></h3>
+                    </hdiv>
                 </div>
             </div>
         </div>
+
+        <!-- PLACARD 2 -->
+        <div class="about__content">
+            <div class="about__placard placard2">
+                <div class="placard__sign">
+                    <div class="placard__line"></div>
+                    <div class="placard__text ">
+                        <h2>Focus</h2>
+                        <hr>
+                        <h3 class="skill__frontend">Front End Development</h3>
+                        <p>
+                            <span class="skill">Html</span>
+                            <span class="skill">CSS</span>
+                            <span class="skill">Javascript</span>
+                            <span class="skill">Bootstrap</span><br>
+                            <span class="skill">React</span>
+                            <span class="skill">React Native</span>
+                        </p>
+                        <h3>Also</h3>
+                        <p>
+                            <span class="skill">Python</span>
+                            <span class="skill">MySQL, PostgreSQL</span>
+                            <span class="skill">R</span><br>
+                            <span class="skill">NodeJS</span>
+                            <span class="skill">Express</span>
+                        </p>
+                        <h3>Tools</h3>
+                        <p>
+                            <span class="skill">VS Code</span>
+                            <span class="skill">Github</span><br>
+                            <span class="skill">Adobe Softwares (PS,AI)</span>
+                        </p>
+                 
+                    </hdiv>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLACARD 3 -->
+        <div class="about__content">
+            <div class="about__placard placard3">
+                <div class="placard__sign">
+                    <div class="placard__line"></div>
+                    <div class="placard__text ">
+                        <h2>Degrees & Courses</h2>
+                        <hr>
+                        <h3>Full Stack Web Developer Bootcamp <br>
+                            <span class="country">- Nucamp </span>
+                        </h3>
+                        <h3>Bachelor in CS<br> 
+                            <span class="country">- Korean National Degree Program</span>
+                        </h3>
+                        <h3>
+                            Many, Many MOOCS
+                        </h3>
+                        <p class="moocs">Professional Certificate : Introduction to Python Programming, <em>Georgia Tech</em></p>
+                        <p class="moocs">Web Developer Bootcamps /<br> 
+                            Advanced Web Developer Bootcamp /<br>  
+                            Complete Javascript Course 2020 /<br> 
+                            Complete SQL Bootcamp 2020 / & others ..., <em>Udemy</em></p>
+                        <p class="moocs">Introduction to R, <em>Georgia Tech</em></p>
+                        <hr>
+                        <h3>Master's in Museum Studies &<br>
+                            Bachelor's in Art History<br>
+                            <span class="country">- Ecold du Louvre</span>
+                        </h3>
+                        <h3>Bachelor's in Fine Arts <br>
+                            <span class="country">- Seoul National University</span>
+                        </h3>
         
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLACARD 4 -->
+        <div class="about__content">
+            <div class="about__placard placard4">
+                <div class="placard__sign">
+                    <div class="placard__line"></div>
+                    <div class="placard__text">
+                        <a href="images/resume.pdf" download><h2>DOWNLOAD FULL RÉSUMÉ</h2></a>
+                    </hdiv>
+                </div>
+            </div>
+        </div>
+
     </section>
+
+
+
+    <!----------- PROEJCT1 PAGE -------------->
+    <section class="project project1 bgcolor__change" id="project1">
+        <div class="project__title color__smoke">
+            <h3>project 01 / transia </h3>
+            
+        </div>
+        <div class="project__content">
+
+        
+        <div class="project__text color__smoke">
+            <h2>TRANSIA _ website & app for a translation company</h2>
+            <a href="https://cranky-tereshkova-545663.netlify.app" target="blank"><button class="project__link__btn">SEE WEBSITE</button></a>
+            <a href="https://github.com/sohye-lee/project_transia" target="blank"><button class="project__link__btn">GITHUB</button></a>
+
+            
+        </div>
+    </div>
+    </section>
+
+    <!----------- PROEJCT2 PAGE -------------->
+    <section class="project project2" id="project2">
+        <div class="project__title color__change"><h3>project 02 / movist</h3></div>
+    </section>
+
+    <!----------- PROEJCT3 PAGE -------------->
+    <section class="project project3 bgcolor__change" id="project3">
+        <div class="project__title color__smoke"><h3>project 03 / magnolia</h3></div>
+    </section>
+
 
     <script src="script.js"></script>
 </body>
